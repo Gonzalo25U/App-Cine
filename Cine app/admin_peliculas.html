@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Administrar Películas - CinemaMax</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.6/dist/umd/supabase.min.js"></script>
+  <script src="./supabaseClient.js"></script>
+  <script src="./admin_peliculas.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+  <h1 class="text-3xl font-bold text-red-700 mb-6">Gestión de Películas</h1>
+
+  <div class="mb-4">
+    <button id="btnAgregarPelicula" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+      + Agregar Película
+    </button>
+    <button onclick="window.location.href='admin.html'" class="ml-4 bg-gray-400 text-black px-4 py-2 rounded hover:bg-gray-500">
+      Volver al Panel
+    </button>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full bg-white shadow-md rounded">
+      <thead class="bg-red-600 text-white">
+        <tr>
+          <th class="py-2 px-4">Título</th>
+          <th class="py-2 px-4">Año</th>
+          <th class="py-2 px-4">Género</th>
+          <th class="py-2 px-4">Descripción</th>
+          <th class="py-2 px-4">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaPeliculas" class="text-center">
+        <!-- Contenido generado por JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <div id="modalPelicula" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-10">
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-md relative">
+      <h2 class="text-xl font-bold mb-4">Formulario de Película</h2>
+      <form id="formPelicula">
+        <label class="block mb-1 font-medium">Título</label>
+        <input type="text" id="titulo" class="w-full p-2 border mb-3 rounded" required>
+
+        <label class="block mb-1 font-medium">Año de estreno</label>
+        <input type="number" id="anio" class="w-full p-2 border mb-3 rounded" required>
+
+        <label class="block mb-1 font-medium">Género</label>
+        <select id="genero" class="w-full p-2 border mb-3 rounded" required></select>
+
+        <label class="block mb-1 font-medium">Descripción</label>
+        <textarea id="descripcion" class="w-full p-2 border mb-4 rounded" rows="3" required></textarea>
+
+        <div class="flex justify-end space-x-2">
+          <button type="button" id="btnCancelar" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</button>
+          <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

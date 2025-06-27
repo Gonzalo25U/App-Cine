@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo | CinemaMax</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.6/dist/umd/supabase.min.js"></script>
+
+  <!-- Cliente Supabase -->
+  <script src="./supabaseClient.js"></script>
+
+  <!-- Script del catálogo -->
+  <script src="./catalogo.js" defer></script>
+</head>
+<body class="bg-gray-950 text-white min-h-screen font-sans">
+
+  <!-- Encabezado -->
+  <header class="bg-red-700 p-4 flex justify-between items-center shadow-md">
+    <h1 class="text-2xl font-bold tracking-wide">🎬 CinemaMax - Catálogo</h1>
+    <a href="bienvenida.html" class="bg-white text-red-700 px-4 py-2 rounded hover:bg-gray-100 transition">
+      Volver
+    </a>
+  </header>
+
+  <!-- Sección de búsqueda y filtros -->
+  <section class="p-4">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+      <input
+        type="text"
+        id="barraBusqueda"
+        placeholder="🔍 Buscar películas..."
+        class="w-full md:w-1/3 px-4 py-2 rounded border border-gray-300 text-black shadow"
+      />
+
+      <button
+        id="btnMostrarTodo"
+        class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded shadow"
+      >
+        Mostrar todo
+      </button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div id="filtroGenero">
+        <label class="block mb-1 text-sm font-medium">🎭 Filtrar por Género</label>
+      </div>
+      <div id="filtroAnio">
+        <label class="block mb-1 text-sm font-medium">📅 Filtrar por Año</label>
+      </div>
+      <div id="filtroClasificacion">
+        <label class="block mb-1 text-sm font-medium">🏷️ Filtrar por Clasificación</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de registros recientes -->
+  <section class="px-4 mb-8">
+    <h2 class="text-xl font-semibold mb-3">🆕 Últimas películas agregadas</h2>
+    <ul id="listaRegistros" class="list-disc list-inside text-gray-300 space-y-1"></ul>
+  </section>
+
+  <!-- Catálogo de películas -->
+  <main class="px-4 pb-10">
+    <h2 class="text-2xl font-bold mb-4">🎞️ Catálogo completo</h2>
+    <div id="catalogo" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-sm text-center py-4">
+    &copy; 2025 CinemaMax. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

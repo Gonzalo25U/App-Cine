@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.6/dist/umd/supabase.min.js"></script>
+  <script src="./supabaseClient.js"></script>
+  <script src="./admin_usuarios.js" defer></script>
+</head>
+<body class="bg-black text-white min-h-screen">
+  <div class="p-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold text-red-500 mb-4">👑 Panel de Administración</h1>
+    <p class="mb-6">Gestiona usuarios registrados en CinemaMax</p>
+
+    <table class="w-full bg-gray-900 text-left rounded shadow overflow-hidden">
+      <thead class="bg-red-700 text-white">
+        <tr>
+          <th class="py-2 px-4">Email</th>
+          <th class="py-2 px-4">Rol</th>
+          <th class="py-2 px-4">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaUsuarios">
+        <tr>
+          <td colspan="3" class="text-center p-4 text-gray-400">Cargando usuarios...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button onclick="window.location.href='bienvenida.html'"
+      class="mt-6 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+      ⬅ Volver
+    </button>
+  </div>
+</body>
+</html>

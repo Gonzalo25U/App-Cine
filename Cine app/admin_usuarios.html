@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Usuarios - Admin</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.6/dist/umd/supabase.min.js"></script>
+  <script src="./supabaseClient.js"></script>
+  <script src="./admin_usuarios.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-red-600 mb-6">👥 Gestión de Usuarios</h1>
+
+    <table class="w-full table-auto bg-white shadow rounded-lg overflow-hidden">
+      <thead class="bg-red-600 text-white">
+        <tr>
+          <th class="py-3 px-4 text-left">Email</th>
+          <th class="py-3 px-4 text-left">Rol</th>
+          <th class="py-3 px-4 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaUsuarios"></tbody>
+    </table>
+
+    <div id="mensaje" class="mt-4 text-sm"></div>
+
+    <div class="mt-8">
+      <button onclick="window.location.href='bienvenida.html'" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded">
+        ⬅️ Volver
+      </button>
+    </div>
+  </div>
+</body>
+</html>
