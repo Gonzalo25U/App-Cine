@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <title>Administrar Películas - CinemaMax</title>
@@ -10,6 +11,7 @@
   <script src="./supabaseClient.js"></script>
   <script src="./admin_peliculas.js" defer></script>
 </head>
+
 <body class="bg-gray-100 min-h-screen p-6">
 
   <h1 class="text-3xl font-bold text-red-700 mb-6">Gestión de Películas</h1>
@@ -18,7 +20,8 @@
     <button id="btnAgregarPelicula" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
       + Agregar Película
     </button>
-    <button onclick="window.location.href='admin.html'" class="ml-4 bg-gray-400 text-black px-4 py-2 rounded hover:bg-gray-500">
+    <button onclick="window.location.href='admin.html'"
+      class="ml-4 bg-gray-400 text-black px-4 py-2 rounded hover:bg-gray-500">
       Volver al Panel
     </button>
   </div>
@@ -57,7 +60,8 @@
         <textarea id="descripcion" class="w-full p-2 border mb-4 rounded" rows="3" required></textarea>
 
         <div class="flex justify-end space-x-2">
-          <button type="button" id="btnCancelar" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</button>
+          <button type="button" id="btnCancelar"
+            class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancelar</button>
           <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Guardar</button>
         </div>
       </form>
@@ -65,4 +69,5 @@
   </div>
 
 </body>
+
 </html>
